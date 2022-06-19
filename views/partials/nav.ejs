@@ -1,0 +1,30 @@
+  <!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center header-scrolled" style="padding:10px">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div id="logo">
+        <h1 ><a href="/home" style="letter-spacing : 3px;font-family:'Comfortaa',cursive;font-weight: 700;"><span>c</span><i class="bi bi-chat-dots" style="color: #426691; font-size:1.01em"></i>nnect</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar" style="padding:0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/home">Home</a></li>
+          <li><a class="nav-link scrollto" href="/main">Make a Call</a></li>
+          <li><a class="nav-link scrollto" href="/emergen">Emergency</a></li>
+
+
+          <% if(currentUser != null) {%>
+            <li><a class="nav-link scrollto" href="/home">Hi <%= currentUser.username %></a></li>
+            <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+          <% }else{ %>
+            <li><a class="nav-link scrollto" href="/login">Login</a></li>
+            <li><a class="nav-link scrollto" href="/register">Register</a></li>
+          <% } %>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->

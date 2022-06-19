@@ -1,0 +1,31 @@
+{
+  "name": "twiliocall",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/speech": "^4.10.2",
+    "body-parser": "^1.19.2",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-session": "^1.17.3",
+    "http": "0.0.1-security",
+    "mongoose": "^6.3.3",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.0.0",
+    "pubnub": "^5.0.1",
+    "request": "^2.88.2",
+    "socket.io": "^4.5.0",
+    "twilio": "^3.77.0",
+    "ws": "^8.6.0"
+  }
+}

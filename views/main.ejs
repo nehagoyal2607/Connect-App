@@ -1,0 +1,83 @@
+<%- include("partials/header") %>
+  
+<link rel="stylesheet" href="styles/mainpage.css">
+</head>
+
+<body>
+  <%- include("partials/nav") %>
+  <main id="main">
+    <div class="mainContainer d-flex justify-content-center align-items-center">
+        <div class="subDiv d-flex justify-content-between align-items-center flex-column">
+            <div class="mainTitle">Reserve Table</div>
+            <img src="pages/assets/img/restaurant2.png" alt="">
+            <a href="/restaurant" class="mainCallButton">Call</a>
+        </div>
+        <div class="subDiv d-flex justify-content-between align-items-center flex-column">
+            <div class="mainTitle">Emergency</div>
+            <img src="pages/assets/img/emergency-red.png" alt="">
+            <a href="/emergen" class="mainCallButton">Call</a>
+        </div>
+        <div class="subDiv d-flex justify-content-between align-items-center flex-column">
+            <div class="mainTitle">Pharmacy</div>
+            <img src="pages/assets/img/pharmacy.png" alt="">
+            <a href="/pharmacy" class="mainCallButton">Call</a>
+        </div>
+        <div class="subDiv d-flex justify-content-between align-items-center flex-column">
+            <div class="mainTitle">Call</div>
+            <img src="pages/assets/img/normalcall.png" alt="">
+            <form action="/opencall" method="POST">
+                <div><button class="mainCallButton">Call</button></div>
+            </form>
+            
+        </div>
+    </div>    
+
+  </main><!-- End #main -->
+  <main>
+      
+      
+
+      <section class="container4">
+        <h3 style="text-align: center;">Recent Calls</h3>
+
+        <ul class="task-items">
+            <% currentUser.recent.forEach(function(call){ %>
+                <% let arr = ["item type1", "item type2" , "item type3" , "item type4" ] %>
+                <% let val = arr[Math.floor(Math.random() * 4)] %>
+                <li class= "<%=val%>" >
+                    <div class="task">
+                        <div class="icon"> </div>
+                        <div class="name" style="width:150px; text-align: center;"> <%= call.receiver %> </div>
+                    </div>
+        
+                    <div class="status">
+                        <div class="text"> <%= call.date %> </div>
+                    </div>
+        
+                    <div class="user">
+                        <% if(call.call_type === "Restaurant"){ %>
+                            <img src="/pages/assets/img/restaurant1.png" alt="Image 001" class="owner-img" />
+                        <% }else if(call.call_type === "General Call"){ %>
+                            <img src="/pages/assets/img/normalcall.png" alt="Image 001" class="owner-img" />
+                        <% }else if(call.call_type === "Emergency"){ %>
+                            <img src="/pages/assets/img/emergency-red.png" alt="Image 001" class="owner-img" />
+                        <% }else if(call.call_type === "Pharmacy"){ %>
+                            <img src="/pages/assets/img/pharmacy.png" alt="Image 001" class="owner-img" />
+                        <% } %>
+                        
+                        <div class="text"> <%= call.call_type %> </div>
+                    </div>
+                </li>
+
+            <% }) %>
+            
+        </ul>
+    
+    </section>
+  </main>
+  
+  <%- include("partials/footer") %>
+
+</body>
+
+</html>
